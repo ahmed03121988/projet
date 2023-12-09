@@ -10,9 +10,12 @@ require ('dotenv').config();
 const port  =  process.env.PORT ;
 
 ConnectDB()
-app.use(cors({credentials:true,origin:"http://localhost:3000/"}))
-app.use(express.json())
 app.use('/public',express.static('public'))
+app.use(express.json())
+
+app.use(cors({origin:true}))
+
+
 app.use('/movie',movieRouter)
 app.use('/api',userRouter)
 

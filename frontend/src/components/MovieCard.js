@@ -1,48 +1,23 @@
-import ReactStars from "react-stars";
-const MovieCard = ({ el }) => {
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import React from 'react'
+
+const MovieCard = () => {
   return (
-    <div className="screen-2">
-      <div className="top-image">
-        <img src={el.image} alt="poster" />
-      </div>
-
-      <div className="main-heading">
-        <h1 className="title">{el.name}</h1>
-
-        <div className="row">
-          {
-            <ReactStars
-              count={5}
-              value={el.rating}
-              size={24}
-              color2={"#ffd700"}
-              edit={false}
-            />
-          }
-          <span>{el.date}</span>
-          <span className="r">R</span>
-
-          <span className="hd">HD</span>
-        </div>
-      </div>
-
-      <div className="categories">
-        <a href="#" className="active">
-          Description
-        </a>
-        <a href="#">Episodes</a>
-        <a href="#">Reviews</a>
-      </div>
-
-      <p className="description">{el.description}</p>
-      <div className="btn-play">
-        <span>
-          {" "}
-          <ion-icon className="icon" name="play"></ion-icon>{" "}
-        </span>
-        Play
-      </div>
+    <div>
+       <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
     </div>
-  );
-};
-export default MovieCard;
+  )
+}
+
+export default MovieCard

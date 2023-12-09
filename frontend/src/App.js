@@ -1,32 +1,28 @@
-import { useState } from "react";
-import MoviesList from "./components/MoviesList";
-import AddMovies from "./components/AddMovies";
-import SearchMovie from "./components/SearchMovie";
+
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login"
+import {Routes,Route} from "react-router-dom"
 
 
 
-export default function App() {
-const [nameSearch, setNameSearch] = useState("");
-  const [ratingSearch, setRatingSearch] = useState(1);
 
-  const addNewMovie = (newMovie) => {
-    // setMoviesList([...moviesList, newMovie]);
-  };
+
+function App() {
+
   return (
     <div className="wrapper">
-      <SearchMovie
-        // nameSearch={nameSearch}
-        // setNameSearch={setNameSearch}
-        // setRatingSearch={setRatingSearch}
-      />
-      <MoviesList
-        // moviesList={moviesList}
-        // nameSearch={nameSearch}
-        // ratingSearch={ratingSearch}
-      />
-      <AddMovies 
-      // addNewMovie={addNewMovie}
-       />
+
+<Routes>
+  <Route path="/login" element={<Login/>}/>
+  <Route path="/register" element={<Register/>}/>
+</Routes>
+
+
+
+
+
+      
     </div>
   );
 }
+export default App;
